@@ -1,0 +1,33 @@
+# Source configuration for the main rail method (not appendix overrides).
+env_name: QuarterCheetah
+method_name: rail
+align_student: true
+n_envs: 4
+n_eval_envs: 4
+n_stack_student: 4
+grayscale_student: false
+normalize_env: true
+eval_interval: 45
+max_episode_steps: 1000
+max_steps: 2600000
+env_vars:
+  render_mode: rgb_array
+  width: 84
+  height: 84
+methods:
+  rail:
+    embd: 256
+    batch_size: 512
+    n_align_epochs: 8
+    discrete_obs: false
+    augment: true
+ppo:
+  n_steps: 512
+  batch_size: 64
+  ent_coef: 0.0004
+  n_epochs: 20
+  clip_range: 0.1
+  max_grad_norm: 0.8
+  gae_lambda: 0.92
+  vf_coef: 0.58096
+  gamma: 0.98

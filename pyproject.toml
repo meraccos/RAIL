@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rail-imitation"
+version = "0.1.0"
+description = "Representation-Aligned Imitation Learning"
+requires-python = ">=3.11,<3.13"
+license = {file = "LICENSE"}
+dependencies = [
+  "torch==2.10.0", "torchvision==0.25.0", "stable-baselines3==2.7.0",
+  "gymnasium[mujoco]==1.2.3", "numpy==2.3.5", "PyYAML==6.0.3",
+  "mujoco==3.4.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["rail*"]
